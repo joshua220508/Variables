@@ -16,5 +16,15 @@ namespace Variables
         {
             InitializeComponent();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnVerificar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
