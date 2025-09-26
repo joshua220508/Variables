@@ -12,6 +12,7 @@ namespace Variables
 {
     public partial class FrmLogin : Form
     {
+        int intentos = 0;
         public FrmLogin()
         {
             InitializeComponent();
@@ -34,11 +35,29 @@ namespace Variables
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (Login(tbUser.Text, tbPassword.Text)) {
-                new Form1().Show();
+            intentos++;
+            
+                if (Login(tbUser.Text, tbPassword.Text))
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                    //new FrmPrincipal().Show();
+                    //this.Hide();
+                    
+                }
+                else
+                {
+                    intentos++;
+                    MessageBox.Show("Contrasena incorrecta.");
+                }
+                if (intentos == 3)
+                {
+                    MessageBox.Show("Has superado el numero de intentos (3)", "Error", MessageBoxButtons.OK);
+                    this.Close();
+                }
                 
-                this.Hide();
-            }
+        
+            
         }
 
         private Boolean Login(string username, string password)
