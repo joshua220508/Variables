@@ -26,5 +26,11 @@ namespace Variables
         {
             this.Close();
         }
+
+        private void edadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FdmArreglo frm = new FdmArreglo();
+            frm.ShowDialog();
+        }
     }
 }

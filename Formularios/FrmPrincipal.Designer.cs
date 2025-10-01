@@ -30,12 +30,13 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.catalogoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.catalogoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblFecha = new System.Windows.Forms.StatusStrip();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.lblFechas = new System.Windows.Forms.ToolStripStatusLabel();
+            this.edadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -62,18 +63,20 @@
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
-            // catalogoToolStripMenuItem
-            // 
-            this.catalogoToolStripMenuItem.Name = "catalogoToolStripMenuItem";
-            this.catalogoToolStripMenuItem.Size = new System.Drawing.Size(100, 29);
-            this.catalogoToolStripMenuItem.Text = "Catalogo";
-            // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(147, 34);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // catalogoToolStripMenuItem
+            // 
+            this.catalogoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.edadesToolStripMenuItem});
+            this.catalogoToolStripMenuItem.Name = "catalogoToolStripMenuItem";
+            this.catalogoToolStripMenuItem.Size = new System.Drawing.Size(100, 29);
+            this.catalogoToolStripMenuItem.Text = "Catalogo";
             // 
             // reportesToolStripMenuItem
             // 
@@ -107,6 +110,13 @@
             this.lblFechas.Size = new System.Drawing.Size(57, 25);
             this.lblFechas.Text = "Fecha";
             // 
+            // edadesToolStripMenuItem
+            // 
+            this.edadesToolStripMenuItem.Name = "edadesToolStripMenuItem";
+            this.edadesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.edadesToolStripMenuItem.Text = "Edades";
+            this.edadesToolStripMenuItem.Click += new System.EventHandler(this.edadesToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -138,5 +148,6 @@
         private System.Windows.Forms.StatusStrip lblFecha;
         private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.ToolStripStatusLabel lblFechas;
+        private System.Windows.Forms.ToolStripMenuItem edadesToolStripMenuItem;
     }
 }

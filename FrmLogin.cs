@@ -35,34 +35,39 @@ namespace Variables
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            intentos++;
-            
-                if (Login(tbUser.Text, tbPassword.Text))
-                {
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                    //new FrmPrincipal().Show();
-                    //this.Hide();
-                    
-                }
-                else
-                {
-                    intentos++;
-                    MessageBox.Show("Contrasena incorrecta.");
-                }
-                if (intentos == 3)
-                {
-                    MessageBox.Show("Has superado el numero de intentos (3)", "Error", MessageBoxButtons.OK);
-                    this.Close();
-                }
-                
-        
-            
+            Logear();
         }
 
+        private void Logear()
+        {
+            if (Login(tbUser.Text, tbPassword.Text))
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+
+            }
+            else
+            {
+                intentos++;
+                MessageBox.Show("Contrasena incorrecta.");
+            }
+            if (intentos == 3)
+            {
+                MessageBox.Show("Has superado el numero de intentos (3)", "Error", MessageBoxButtons.OK);
+                this.Close();
+            } 
+        }
         private Boolean Login(string username, string password)
         {
             return username.Equals("admin") && password.Equals("admin");
+        }
+
+        private void tbPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Logear();            
+            }
         }
     }
 }
